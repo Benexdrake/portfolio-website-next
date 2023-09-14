@@ -8,12 +8,19 @@ import { GetDB } from '@/lib/mongodb'
 
 export default function Home(props:any) 
 {
-    return (
-   <div>HI</div>
+  return (
+    <div>{props.aboutMe.title}</div>
   )
 }
 
-// export async function _getServerSideProps()
-// {
-    
-// }
+export async function getStaticProps()
+{
+  const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => {return x.json()})
+
+  return {
+    props: {
+      aboutMe
+    },
+    revalidate: 600
+  }
+}

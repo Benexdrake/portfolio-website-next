@@ -5,8 +5,20 @@ import { Inter } from 'next/font/google'
 
 //const inter = Inter({ subsets: ['latin'] })
 
-export default function Impressum() {
+export default function Impressum(props:any) {
   return (
-   <div>HI</div>
-  )
-}
+    <div>{props.aboutMe.title}</div>
+   )
+ }
+ 
+ export async function getStaticProps()
+ {
+   const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => {return x.json()})
+ 
+   return {
+     props: {
+       aboutMe
+     },
+     revalidate: 600
+   }
+ }
