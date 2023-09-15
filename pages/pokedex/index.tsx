@@ -13,14 +13,13 @@ export default function Pokedex(props:any)
    )
  }
  
- export async function getStaticProps()
+ export async function getServerSideProps()
  {
    const pokemons = await fetch('http://localhost:3000/api/pokedex').then(x => {return x.json()})
  
    return {
      props: {
        pokemons
-     },
-     revalidate: 600
+     }
    }
  }

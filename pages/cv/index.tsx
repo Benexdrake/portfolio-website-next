@@ -11,14 +11,13 @@ export default function CV(props:any) {
   )
 }
 
-export async function getStaticProps()
+export async function getServerSideProps()
 {
   const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => {return x.json()})
 
   return {
     props: {
       aboutMe
-    },
-    revalidate: 600
+    }
   }
 }

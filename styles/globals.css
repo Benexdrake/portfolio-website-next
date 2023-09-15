@@ -1,3 +1,371 @@
-:root{
-    
+:root {
+    --color1: #303841;
+    --color2: #3A4750;
+    --color3: #EA9215;
+    --color4: #EEEEEE;
 }
+
+.body{
+    background-color: var(--color2);
+    color: var(--color4);
+    margin: 60px 20px 20px 20px;
+}
+
+.bg-color1
+{
+    background-color: var(--color1);
+}
+.bg-color2
+{
+    background-color: var(--color2);
+}
+.bg-color3
+{
+    background-color: var(--color3);
+}
+.bg-color4
+{
+    background-color: var(--color4);
+}
+
+.text-color1
+{
+    color: var(--color1);
+}
+.text-color2
+{
+    color: var(--color2);
+}
+.text-color3
+{
+    color: var(--color3);
+}
+.text-color4
+{
+    color: var(--color4);
+}
+
+.border-color3
+{
+    border-color: var(--color3);
+}
+
+.nav-header
+{
+    background-color: var(--color1);
+    border-bottom: 5px solid var(--color3);
+}
+
+.cv-button
+{
+    background-color: var(--color3);
+    color: var(--color4);
+    border: 2px solid var(--color4);
+}
+
+.cv-button:hover
+{
+    background-color: var(--color2);
+    color: var(--color3);
+    border: 2px solid var(--color3);
+}
+
+li > a.text-color4:hover
+{
+    background-color: var(--color3);
+}
+
+.block {
+    margin: 10px 0px;
+    
+    border-radius: 10px;
+    background-color: var(--color1);
+}
+
+.aboutMe-Image
+{
+    border: 5px solid var(--color3);
+    border-radius: 100%;
+}
+
+.icon 
+{
+    display: inline;
+    font-size: 2rem;
+    margin: 3px;
+    color:var(--color3);
+    background-color: var(--color1);
+}
+
+.icon:hover
+{
+    color: var(--color4);
+}
+
+.skillHeader {
+    text-align: center;
+    color: var(--color3);
+}
+
+.skills
+{
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color:var(--color4);
+    background-color: var(--color1);
+}
+
+.skill-icon
+{
+    width: 50px;
+    background: transparent;
+}
+
+.skill-icon:hover
+{
+    transform: translate3D(0,-1px,0) scale(2.00);
+}
+
+.projects
+{
+    background-color: var(--color1);
+    border-radius: 0;
+}
+
+.projects:hover
+{
+    background-color: var(--color3);
+}
+
+.nav-header
+{
+    background-color: var(--color1);
+    border-bottom: 5px solid var(--color3);
+}
+
+.bg-color1
+{
+    background-color: var(--color1);
+}
+.bg-color2
+{
+    background-color: var(--color2);
+}
+.bg-color3
+{
+    background-color: var(--color3);
+}
+.bg-color4
+{
+    background-color: var(--color4);
+}
+
+.text-color1
+{
+    color: var(--color1);
+}
+.text-color2
+{
+    color: var(--color2);
+}
+.text-color3
+{
+    color: var(--color3);
+}
+.text-color4
+{
+    color: var(--color4);
+}
+
+.border-color3
+{
+    border-color: var(--color3);
+}
+
+.icon 
+{
+    display: inline;
+    font-size: 2rem;
+    margin: 3px;
+    color:var(--color3);
+    background-color: var(--color1);
+}
+
+.icon:hover
+{
+    color: var(--color4);
+}
+
+.aboutMe-Image
+{
+    border: 5px solid var(--color3);
+    border-radius: 100%;
+}
+
+.cv-button
+{
+    background-color: var(--color3);
+    color: var(--color4);
+    border: 2px solid var(--color4);
+}
+
+.cv-button:hover
+{
+    background-color: var(--color2);
+    color: var(--color3);
+    border: 2px solid var(--color3);
+}
+
+.skills
+{
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color:var(--color4);
+    background-color: var(--color1);
+}
+
+.stars
+{
+    font-size: 1.5rem;
+    color: var(--color3);
+}
+
+.stars:hover
+{
+    color: var(--color4);
+}
+h4.text-color3
+{
+    font-size: 2rem;
+    font-weight:bolder;
+}
+
+h3.text-color3
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.link
+{
+    padding: 0;
+    text-decoration: none;
+    color: var(--color4);
+    background-color: var(--color1);
+}
+
+.link:hover
+{
+    color: var(--color3);
+}
+
+.cv-list
+{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+td > i.icon{
+    font-size: 1rem;
+}
+
+.card:hover
+{
+    transform: translate3D(0,-1px,0) scale(1.03);
+    border-color: var(--color3);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px var(--color3);
+}
+
+.block:hover
+{
+    transform: translate3D(0,-1px,0) scale(1.03);
+    border-color: var(--color3);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px var(--color3);
+}
+
+.form-control:focus {
+    border-color: var(--color3);
+    box-shadow: inset 0 1px 5px rgb(255, 255, 255), 0 0 8px var(--color3);
+  }
+
+  li > a.text-color4:hover
+{
+    background-color: var(--color3);
+}
+
+.card
+{
+    border: 3px solid var(--color3);
+}
+
+.overlay-card-top-color1
+{
+    background-color: var(--color1);
+    opacity: 0.8;
+    padding: 10px 10px 0 10px;
+    border-radius: 3%;
+}
+
+.overlay-card-bottom-color1
+{
+    background-color: var(--color1);
+    opacity: 0.8;
+    padding: 5px 10px;
+    border-radius: 3%;
+}
+
+.card:hover a .hidden
+{
+    display: none;
+}
+
+.tag-button
+{
+    background-color: var(--color3);
+    color: var(--color4);
+    margin: 0 10px 0 0;
+    padding: 0 5px;
+    font-weight: bold;
+    border-radius: 3%;
+}
+.skill-icon
+{
+    width: 50px;
+    background: transparent;
+}
+
+.skill-icon:hover
+{
+    transform: translate3D(0,-1px,0) scale(2.00);
+}
+
+.skill-title 
+{
+    background-color: var(--color1);
+    color: var(--color4);
+}
+
+.css-table 
+{
+    display: table;
+}
+.css-table-row 
+{
+    display: table-row;
+}
+
+.css-table-row div 
+{
+    display: table-cell;
+    
+    padding: 10px 10px;
+    min-width: 100px;
+}
+
+.css-table-body {
+    display: table-row-group;
+    }

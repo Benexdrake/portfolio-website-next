@@ -12,7 +12,7 @@ export default function Github(props:any) {
   )
 }
 
-export async function getStaticProps()
+export async function getServerSideProps()
 {
   const projects = await fetch('http://localhost:3000/api/github/projects').then(x => {return x.json()});
 
@@ -20,7 +20,6 @@ export async function getStaticProps()
   return {
     props: {
       projects
-    },
-    revalidate: 600
+    }
   }
 }
