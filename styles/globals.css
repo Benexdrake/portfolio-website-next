@@ -237,6 +237,7 @@ li>a.text-color4:hover {
 
 .card {
     border: 3px solid var(--color3);
+    text-decoration: none;
 }
 
 .overlay-card-top-color1 {
@@ -286,4 +287,3 @@ li>a.text-color4:hover {
     padding: 40px;
     border-radius: 10px;
 }
-
