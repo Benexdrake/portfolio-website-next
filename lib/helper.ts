@@ -33,3 +33,15 @@ export const getSkills = (skill:string, skills:Skill[]) => {
     let age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365.25);
     return age
   }
+
+  export const getImage = (language:string) =>
+  {
+   if(language)
+   {
+     if(language.includes('C#'))
+     return '/assets/CSharp.png';
+     else if(language.includes('TypeScript') || language.includes('HTML') || language.includes('CSS'))
+     return '/assets/Typescript.png';
+   }
+   return '';
+  }

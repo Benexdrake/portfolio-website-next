@@ -2,13 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Project } from '@/models/project'
+import GithubCard from '@/components/github/github_card'
 //import styles from '@/styles/Home.module.css'
 
 //const inter = Inter({ subsets: ['latin'] })
 
 export default function Github(props:any) {
   return (
-   <div>{props.projects.map((x:Project) => { return (<div>{x.name}</div>)})}</div>
+   <div className='container'>
+    <div className='row'>
+      {props.projects.map((x:Project) => { return (
+      <div className='col-4' style={{['marginBottom']: '20px'}}>
+        <GithubCard project={x}/>
+        </div>
+        )})}
+      </div>
+    </div>
   )
 }
 
