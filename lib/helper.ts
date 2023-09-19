@@ -27,3 +27,9 @@ export const getSkills = (skill:string, skills:Skill[]) => {
   {
     return journeys.filter(x => x.type === search);
   }
+
+  export const getBirthDate = (birthOfDate: number) => {
+    let timeDiff = Math.abs(Date.now() - new Date(birthOfDate).getTime());
+    let age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365.25);
+    return age
+  }

@@ -2,6 +2,7 @@ import NextAuth from "next-auth/next";
 import Providers from 'next-auth/providers/discord';
 import config from '@/config.json';
 import getUser from '@/lib/getUser';
+import { GithubUser } from "@/models/githubUser";
 
 
 const scopes = ['identify'].join(' ')
@@ -27,6 +28,7 @@ export default NextAuth({
         },
         async session({ session, token }) {
             const user = await getUser(token.accessToken as string);
+            console.log(user);
             session.user = user;
             return session;
           },

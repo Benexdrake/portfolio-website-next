@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { signIn, signOut, useSession } from 'next-auth/react'
+import DiscordUserInformation from "./discord/discord_user"
 
 export default function Navbar(props: any) {
 
@@ -20,6 +21,7 @@ export default function Navbar(props: any) {
                 {session &&
                     <>
                         <button className='btn btn-danger' onClick={() => signOut()}><i className="fa-brands fa-discord"></i> Sign out</button>
+                        <DiscordUserInformation user={session.user}/>
                     </>
                 }
                 <button className="navbar-toggler navbar-dark burger-button"
