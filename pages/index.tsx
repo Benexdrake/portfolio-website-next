@@ -1,4 +1,4 @@
-import SkillsBlock from "@/components/skills/skills";
+import SkillsBlock from "@/components/skills/skillsBlock";
 import { AboutMe, Skill } from "@/models/aboutMe";
 
 export default function Home(props: any) {
@@ -46,41 +46,21 @@ export default function Home(props: any) {
                 <h2 className="text-color3">{user.name}, {user.location}</h2>
                 <p>{user.bio}</p>
                 <div className="col-md-3">
-                  <table className="table">
-                    <tbody>
 
-                    <tr key={user.publicRepos}>
-                      <td>
-                        Repositories:
-                      </td>
-                      <td>
-                        {user.publicRepos}
-                      </td>
-                    </tr>
-                    </tbody>
-                    <tbody>
-
-                    <tr key={user.followers}>
-                      <td>
-                        Followers:
-                      </td>
-                      <td>
-                        {user.followers}
-                      </td>
-                    </tr>
-                    </tbody>
-                    <tbody>
-
-                    <tr key= {user.following}>
-                      <td>
-                        Following:
-                      </td>
-                      <td>
-                        {user.following}
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
+                  <div className="css-table">
+                    <div className="css-table-row">
+                      <div>Repositories: </div>
+                      <div>{user.publicRepos}</div>
+                    </div>
+                    <div className="css-table-row">
+                      <div>Followsers: </div>
+                      <div>{user.followers}</div>
+                    </div>
+                    <div className="css-table-row">
+                      <div>Following: </div>
+                      <div>{user.following}</div>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   On Github since {user.createdAt.split('T')[0]}
