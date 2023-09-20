@@ -62,6 +62,16 @@
     min-width: 100px;
 }
 
+.css-table-row-attributes
+{
+    display: table-cell;
+    padding: 10px;
+}
+
+.css-table-row .css-table-row-attributes {
+    min-width: 50px;
+}
+
 .css-table-row-cv {
     display: table-cell;
 }

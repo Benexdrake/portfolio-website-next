@@ -8,11 +8,9 @@ export default function GithubAccountInformation(props:any)
                 <img src={user.avatar} alt="" className="float-left" width="80%" />
               </div>
               <div className="col-md-8">
-
                 <h2 className="text-color3">{user.name}, {user.location}</h2>
                 <p>{user.bio}</p>
                 <div className="col-md-3">
-
                   <div className="css-table">
                     <div className="css-table-row">
                       <div>Repositories: </div>

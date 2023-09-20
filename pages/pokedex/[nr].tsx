@@ -1,8 +1,20 @@
-import { Pokemon } from '@/models/pokemon';
+import { Pokemon } from '@/models/pokemon/pokemon';
+import { getColor } from '@/lib/helper';
+import PokemonAttributes from '@/components/pokedex/pokemon/pokemon_attributes';
 
 export default function Pokedex(props:any) {
+  const pokemons = props.pokemons
   return (
-    <div>{props?.pokemons?.map((x:Pokemon) => {return (<div key={x.nr + '-'+ x.name}>{x.name}</div>)})}</div>
+    <div className='container' style={{backgroundColor: getColor(pokemons[0].types[0].toLowerCase()), boxShadow: '0px 0px 60px 30px black'}}>
+      {pokemons?.map((x:Pokemon) => {return (
+      
+      <div key={x.nr + '-'+ x.name}>
+        {x.nr + ' ' + x.name}
+        <PokemonAttributes pokemon={x}/>
+      </div>
+    
+      )})}
+    </div>
    )
  }
  

@@ -1,25 +1,33 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import { Pokemon } from '@/models/pokemon'
-//import styles from '@/styles/Home.module.css'
+import PokemonCard from '@/components/pokedex/pokemon_card'
 
-//const inter = Inter({ subsets: ['latin'] })
-
-export default function Pokedex(props:any) 
-{
+export default function Pokedex(props: any) {
+  const pokemons = props.pokemons;
   return (
-    <div>{props?.pokemons?.map((x:Pokemon) => {return (<div>{x.name}</div>)})}</div>
-   )
- }
- 
- export async function getServerSideProps()
- {
-   const pokemons = await fetch('http://localhost:3000/api/pokedex').then(x => {return x.json()})
- 
-   return {
-     props: {
-       pokemons
-     }
-   }
- }
+
+    <div className='container'>
+      <div className='row'>
+
+        {pokemons?.slice(0,9).map((x: Pokemon) => {
+          return (
+            <div key={x._id} className='col-lg-4' style={{ padding: '10px' }}>
+              <PokemonCard pokemon={x} />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+export async function getServerSideProps() {
+  let pokemons = await fetch('http://localhost:3000/api/pokedex').then(x => { return x.json() })
+
+  pokemons = pokemons.sort(() => 0.5 - Math.random());
+
+  return {
+    props: {
+      pokemons
+    }
+  }
+}

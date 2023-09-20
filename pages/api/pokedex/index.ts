@@ -5,7 +5,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 {
     if(req.method === 'GET')
     {
-        const pokemons = await (await GetDB('Pokedex','Pokemon')).find().toArray();
+        const pokemons = await (await GetDB('Pokedex','Pokemons')).find().toArray();
         res.status(200).json(pokemons)
     }    
 }

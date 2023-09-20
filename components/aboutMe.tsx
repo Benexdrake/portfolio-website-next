@@ -1,4 +1,5 @@
 import { getBirthDate } from "@/lib/helper";
+import Image from 'next/image';
 
 export default function AboutMeBlock(props:any)
 {   
@@ -8,7 +9,7 @@ export default function AboutMeBlock(props:any)
 
             <div className="row p-3">
               <div className="col-md-3">
-                <img src="/assets/Me.png" alt="" className="float-left aboutMe-Image" width="100%" />
+                <Image src="/assets/Me.png" alt="" className="float-left aboutMe-Image" width={200} height={200} />
               </div>
               <div className="col-md-9">
                 <h1 className="text-color3">{aboutMe.title} </h1>
