@@ -1,4 +1,4 @@
-export default function PokemonAttribut(props:any)
+export default function PokemonStat(props:any)
 {
     const text = props.text;
     const value = props.value;

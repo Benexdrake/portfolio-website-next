@@ -87,3 +87,20 @@ export const getSkills = (skill:string, skills:Skill[]) => {
      else
        return 'orange';
   }
+
+  export const getGender = (genders:string[])=>
+  {
+   if(genders.includes("male") && genders.includes("female"))
+   {
+     return "♀ / ♂";
+   }
+   else if(genders.includes("female"))
+   {
+     return "♀";
+   }
+   else if(genders.includes("male"))
+   {
+     return "♂";
+   }
+     return "Unkown";
+  }

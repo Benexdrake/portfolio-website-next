@@ -1,20 +1,41 @@
-import { Pokemon } from "@/models/pokemon/pokemon";
-import PokemonAttribut from "./pokemon_attribute";
+import { getGender } from "@/lib/helper";
+import { Fragment } from "react";
 
 export default function PokemonAttributes(props:any)
 {
-    const pokemon = props.pokemon as Pokemon;
+    const pokemons = props.pokemons;
 
     return (
-        <table className="table table-striped text-color1" style={{width: '150px'}}>
-            <tbody>
-                <PokemonAttribut text="HP" value={pokemon.hp}/>
-                <PokemonAttribut text="ATK" value={pokemon.attack}/>
-                <PokemonAttribut text="DEF" value={pokemon.defense}/>
-                <PokemonAttribut text="SPD" value={pokemon.speed}/>
-                <PokemonAttribut text="SP ATK" value={pokemon.specialAttack}/>
-                <PokemonAttribut text="SP DEF" value={pokemon.specialDefense}/>
-            </tbody>
-        </table>
+        <Fragment>
+        <h3>Attributes:</h3>
+            <table className='table table-striped' style={{width:'200px'}}>
+              <tbody>
+                <tr>
+                  <td>Height: </td>
+                  <td>
+                  {pokemons[0].height}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Weight: </td>
+                  <td>
+                  {pokemons[0].weight}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Category: </td>
+                  <td>
+                  {pokemons[0].category}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Genders: </td>
+                  <td>
+                  {getGender(pokemons[0].genders)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </Fragment>
     );
 }

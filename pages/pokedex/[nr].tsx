@@ -1,74 +1,63 @@
 import { Pokemon } from '@/models/pokemon/pokemon';
-import { getColor } from '@/lib/helper';
-import PokemonAttributes from '@/components/pokedex/pokemon/pokemon_attributes';
+import { getColor, getGender } from '@/lib/helper';
+import PokemonStats from '@/components/pokedex/pokemon/pokemon_stats';
 import PokemonTypesWeakness from '@/components/pokedex/pokemon_types_weakness';
+import PokemonAttributes from '@/components/pokedex/pokemon/pokemon_attributes';
+import PokemonSkills from '@/components/pokedex/pokemon/pokemon_skills';
+import Link from 'next/link'
+import Image from 'next/image';
+import PokemonEvolutions from '@/components/pokedex/pokemon/pokemon_evolutions';
 
 export default function Pokedex(props:any) {
   const pokemons = props.pokemons as Pokemon[]
   const evoImages = props.evoImages;
-  console.log(evoImages)
   return (
-    <div className='container' style={{backgroundColor: getColor(pokemons[0].types[0].toLowerCase()), boxShadow: '0px 0px 60px 30px black', borderRadius: '20px', padding: '10px'}}>
+    <Link href='/pokedex' style={{textDecoration:'none'}}>
+    <div className='container text-color4' style={{backgroundColor: getColor(pokemons[0].types[0].toLowerCase()), boxShadow: '0px 0px 60px 30px black', borderRadius: '20px', padding: '20px', marginTop: '150px'}}>
       <div className='row'>
-        <div className='col-md-4'>
-          <img src={pokemons[0].imageUrl} alt="" width={400}/>
-          <div className='bg-color4'>
+        <div className='col-lg-4'>
+          <Image src={pokemons[0].imageUrl} alt="" width={400} height={400}/>
+          <div className='bg-color4' style={{padding: '10px', borderRadius: '10px'}}>
             <PokemonTypesWeakness title="Types" attributes={pokemons[0].types} id={pokemons[0]._id} />
             <PokemonTypesWeakness title="Weaknesses" attributes={pokemons[0].weaknesses} id={pokemons[0]._id} />
           </div>
+          <br />
         </div>
-        <div className='col-md-8'>
+        <div className='col-lg-8'>
+          <div className='bg-color4 text-color1' style={{padding: '10px 0px 1px 10px', borderRadius: '10px'}}>
           <h3>#{pokemons[0].nr}</h3>
           <h1>{pokemons[0].name}</h1>
           <p>{pokemons[0].descriptions}</p>
+          </div>
+          <br />
           <div className='row'>
-            <div className='col-md-8'>
-            <a href={`https://www.pokemon.com/us/pokedex/${pokemons[0].nr}`} target='_blank' className='btn btn-danger'>{pokemons[0].name}</a>
-            <br />
-            <br />
-            <table className='table table-striped'>
-              <tbody>
-                <tr>
-                  <td>Height: </td>
-                  <td>
-                  {pokemons[0].height}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Weight: </td>
-                  <td>
-                  {pokemons[0].weight}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <br />
-            <br />
-            <p>Evolutions:</p>
-            {evoImages.map((x:string) => {
-              return <img key={pokemons[0]._id+x} src={x} width={50}/>
-            })}
+            <div className='col-lg-12'>
+              <div className='row'>
+                <div className='col-lg-3'>
+                  <PokemonAttributes pokemons={pokemons} />
+                </div>
+                <div className='col-lg-2' style={{marginRight: '20px'}}>
+                  <h3>Stats:</h3>
+                  <PokemonStats pokemon={pokemons[0]}/>
+                </div>
+            <div className='col-lg-6'>
+              <PokemonSkills pokemons={pokemons}/>
+              <PokemonEvolutions id = {pokemons[0]._id} images={evoImages}/>
             </div>
-            <div className='col-md-4'>
-              <h3>Attributes:</h3>
-              <PokemonAttributes pokemon={pokemons[0]}/>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </Link>
    )
  }
  
  export async function getServerSideProps(ctx:any)
  {
     const nr = ctx.query.nr;
-    console.log(nr)
-    
     const pokemons = await fetch('http://localhost:3000/api/pokedex/'+nr).then(x => {return x.json()}) as Pokemon[]
-
-
- 
     if(!pokemons || pokemons.length === 0)
     return {
       redirect: {
