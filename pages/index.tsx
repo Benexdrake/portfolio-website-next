@@ -1,7 +1,6 @@
 import AboutMeBlock from "@/components/aboutMe";
 import GithubAccountInformation from "@/components/github/github_account_information";
 import SkillsBlock from "@/components/skills/skillsBlock";
-import { AboutMe, Skill } from "@/models/aboutMe";
 
 export default function Home(props: any) {
   const aboutMe = props.aboutMe;

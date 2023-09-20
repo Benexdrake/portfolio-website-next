@@ -2,6 +2,7 @@ import { Ability } from "./ability";
 
 export class Pokemon
 {
+    _id:string = "";
     nr:number = 0;
     name:string ="";
     imageUrl:string = "";

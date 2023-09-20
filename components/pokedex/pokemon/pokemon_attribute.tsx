@@ -4,13 +4,9 @@ export default function PokemonAttribut(props:any)
     const value = props.value;
 
     return (
-        <div className="css-table-row">
-                <div className="css-table-row-attributes">
-                    {text}:
-                </div>
-                <div className="css-table-row-attributes">
-                    {value}
-                </div>
-            </div>
+        <tr>
+            <td>{text}</td>
+            <td>{value}</td>
+        </tr>
     );
 }
