@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 export default function PokemonAttributes(props:any)
 {
-    const pokemons = props.pokemons;
+    const pokemon = props.pokemon;
 
     return (
         <Fragment>
@@ -13,25 +13,25 @@ export default function PokemonAttributes(props:any)
                 <tr>
                   <td>Height: </td>
                   <td>
-                  {pokemons[0].height}
+                  {pokemon.height}
                   </td>
                 </tr>
                 <tr>
                   <td>Weight: </td>
                   <td>
-                  {pokemons[0].weight}
+                  {pokemon.weight}
                   </td>
                 </tr>
                 <tr>
                   <td>Category: </td>
                   <td>
-                  {pokemons[0].category}
+                  {pokemon.category}
                   </td>
                 </tr>
                 <tr>
                   <td>Genders: </td>
                   <td>
-                  {getGender(pokemons[0].genders)}
+                  {getGender(pokemon.genders)}
                   </td>
                 </tr>
               </tbody>

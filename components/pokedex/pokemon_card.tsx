@@ -1,4 +1,4 @@
-import { getColor } from "@/lib/helper";
+import { getColor, getGender } from "@/lib/helper";
 import PokemonTypesWeakness from "./pokemon_types_weakness";
 import Link from "next/link";
 
@@ -14,10 +14,10 @@ export default function PokemonCard(props:any)
         <div className="card-img-overlay">
             <div style={{padding: '10px'}} className="d-flex justify-content-between bg-color4">
                 <div>
-                    <h5 className="card-title text-color1">Nr: {pokemon.nr} {pokemon.name}</h5>
+                    <h5 className="card-title text-color1">#{pokemon.nr} {pokemon.name}</h5>
                 </div>
                 <div>
-                    <h5 className="card-title text-color1">{pokemon.genders.join(' / ')}</h5>
+                    <h5 className="card-title text-color1">{getGender(pokemon.genders)}</h5>
                 </div>
             </div>
             <div></div>

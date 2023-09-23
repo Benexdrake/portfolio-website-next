@@ -17,7 +17,7 @@ export default function GithubAccountInformation(props:any)
                       <div>{user.publicRepos}</div>
                     </div>
                     <div className="css-table-row">
-                      <div>Followsers: </div>
+                      <div>Followers: </div>
                       <div>{user.followers}</div>
                     </div>
                     <div className="css-table-row">

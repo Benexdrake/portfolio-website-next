@@ -33,8 +33,8 @@ export default function Navbar(props: any) {
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarScroll">
-                    <ul className="navbar-nav navbar-nav-scroll ms-auto">
+                <div className="collapse navbar-collapse justify-content-center" id="navbarScroll">
+                    <ul className="navbar-nav navbar-nav-scroll">
                         <li className="nav-item">
                             <Link href="/" className="nav-link text-color4">Home</Link>
                         </li>
@@ -54,10 +54,10 @@ export default function Navbar(props: any) {
                             <Link href="/impressum" className="nav-link text-color4">Impressum</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/Lebenslauf.pdf" target="_blank" className="btn cv-button"><b>Download CV</b></a>
                         </li>
                     </ul>
                 </div>
+                            <a href="/Lebenslauf.pdf" target="_blank" className="btn cv-button"><b>Download CV</b></a>
             </div>
         </nav>
     )

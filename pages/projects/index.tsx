@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Projects() {
     return (
-        <div className="container">
+        <div className="container" style={{marginTop:'80px'}}>
             <div className="row">
                 <div className="col-xl-4 col-lg-6">
                     <Link href="/github" style={{ textDecoration: 'none' }}><ProjectCard image="github.png" title="Github" description="Github repositories" /></Link>

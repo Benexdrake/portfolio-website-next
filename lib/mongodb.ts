@@ -1,9 +1,8 @@
 import { MongoClient } from "mongodb";
-import config from '@/config.json'
 
 async function GetClient()
 {
-    return await MongoClient.connect(config.mongo);
+    return await MongoClient.connect(process.env.Mongo);
 }
 
 export async function GetDB(db:string, collection:string)

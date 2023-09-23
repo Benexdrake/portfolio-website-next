@@ -9,8 +9,10 @@ import Image from 'next/image';
 import PokemonEvolutions from '@/components/pokedex/pokemon/pokemon_evolutions';
 
 export default function Pokedex(props:any) {
-  const pokemons = props.pokemons as Pokemon[]
+
+  const pokemons = props.pokemons
   const evoImages = props.evoImages;
+  console.log(pokemons)
   return (
     <Link href='/pokedex' style={{textDecoration:'none'}}>
     <div className='container text-color4' style={{backgroundColor: getColor(pokemons[0].types[0].toLowerCase()), boxShadow: '0px 0px 60px 30px black', borderRadius: '20px', padding: '20px', marginTop: '150px'}}>
@@ -34,14 +36,14 @@ export default function Pokedex(props:any) {
             <div className='col-lg-12'>
               <div className='row'>
                 <div className='col-lg-3'>
-                  <PokemonAttributes pokemons={pokemons} />
+                  <PokemonAttributes pokemon={pokemons[0]} />
                 </div>
                 <div className='col-lg-2' style={{marginRight: '20px'}}>
                   <h3>Stats:</h3>
                   <PokemonStats pokemon={pokemons[0]}/>
                 </div>
             <div className='col-lg-6'>
-              <PokemonSkills pokemons={pokemons}/>
+              <PokemonSkills pokemon={pokemons[0]}/>
               <PokemonEvolutions id = {pokemons[0]._id} images={evoImages}/>
             </div>
               </div>
@@ -56,7 +58,7 @@ export default function Pokedex(props:any) {
  
  export async function getServerSideProps(ctx:any)
  {
-    const nr = ctx.query.nr;
+    const nr = ctx.params.nr;
     const pokemons = await fetch('http://localhost:3000/api/pokedex/'+nr).then(x => {return x.json()}) as Pokemon[]
     if(!pokemons || pokemons.length === 0)
     return {
@@ -66,7 +68,7 @@ export default function Pokedex(props:any) {
       }
     }
 
-    const nrs = pokemons[0].evolutionIds;
+    const nrs = pokemons[0].evolutionIds.filter((x:number) => x !== pokemons[0].nr);
 
     const evoImages = nrs.map(nr => 
     {

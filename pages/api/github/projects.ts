@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import config from '@/config.json'
 import { Octokit } from "octokit";
 import { Project } from "@/models/project";
 
@@ -8,11 +7,11 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     if(req.method === 'GET')
     {
         const octo = new Octokit({
-            auth: config.Github.api
+            auth: process.env.Github_Secret
         });
 
         const response = await octo.request('GET /user/repos', {
-            owner: config.Github.user,
+            owner: process.env.Github_User,
             headers: {
               'X-GitHub-Api-Version': '2022-11-28'
             }
