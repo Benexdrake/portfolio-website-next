@@ -1,5 +1,6 @@
 import { Pokemon } from '@/models/pokemon/pokemon';
 import PokemonCard from '@/components/pokedex/pokemon_card'
+import axios from 'axios';
 
 export default function Pokedex(props: any) {
   const pokemons = props.pokemons;
@@ -21,7 +22,7 @@ export default function Pokedex(props: any) {
 }
 
 export async function getServerSideProps() {
-  let pokemons = await fetch('http://localhost:3000/api/pokedex').then(x => { return x.json() })
+  let pokemons = await axios.post('http://localhost:3000/api/pokedex', {key:process.env.PROTECT_API}).then(x => {return x.data});
 
   pokemons = pokemons.filter(x => x.variant === false);
 

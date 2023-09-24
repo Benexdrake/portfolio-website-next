@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Project } from '@/models/project'
 import GithubCard from '@/components/github/github_card'
+import axios from 'axios'
 //import styles from '@/styles/Home.module.css'
 
 //const inter = Inter({ subsets: ['latin'] })
@@ -23,7 +24,7 @@ export default function Github(props:any) {
 
 export async function getServerSideProps()
 {
-  const projects = await fetch('http://localhost:3000/api/github/projects').then(x => {return x.json()});
+  const projects = await axios.post('http://localhost:3000/api/github/projects', {key:process.env.PROTECT_API}).then(x => {return x.data});
 
 
   return {

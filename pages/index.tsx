@@ -1,6 +1,7 @@
 import AboutMeBlock from "@/components/aboutMe";
 import GithubAccountInformation from "@/components/github/github_account_information";
 import SkillsBlock from "@/components/skills/skillsBlock";
+import axios from "axios";
 
 export default function Home(props: any) {
   const aboutMe = props.aboutMe;
@@ -21,8 +22,8 @@ export default function Home(props: any) {
 }
 
 export async function getServerSideProps() {
-  const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => { return x.json() })
-  const githubUser = await fetch('http://localhost:3000/api/github/profile').then(x => { return x.json() })
+  const aboutMe = await axios.post('http://localhost:3000/api/aboutMe', {key:process.env.PROTECT_API}).then(x => {return x.data});
+  const githubUser = await axios.post('http://localhost:3000/api/github/profile', {key:process.env.PROTECT_API}).then(x => {return x.data});
 
   return {
     props: {

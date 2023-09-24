@@ -122,10 +122,6 @@
     background-color: var(--color3);
 }
 
-li>a.text-color4:hover {
-    background-color: var(--color3);
-}
-
 .block {
     margin: 10px 0px 20px 0;
 
@@ -217,8 +213,6 @@ h3.text-color3 {
     color: var(--color3);
 }
 
-
-
 div>i.icon {
     font-size: 1rem;
 }
@@ -242,7 +236,13 @@ div>i.icon {
 }
 
 li>a.text-color4:hover {
-    background-color: var(--color3);
+    color: var(--color4);
+    border-bottom: 2px solid var(--color3);
+    padding-bottom: 2px;
+}
+
+li>a.text-color4:active {
+    color: var(--color3);
 }
 
 .card {

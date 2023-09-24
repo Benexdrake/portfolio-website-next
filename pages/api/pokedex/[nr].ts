@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) 
 {
-    if(req.method === 'GET')
+    if(req.method === 'POST' && req.body.key === process.env.PROTECT_API)
     {
         const nr = parseInt(req.query.nr as string);
 
@@ -11,4 +11,6 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
         
         res.status(200).json(pokemons)
     }    
+    else
+        res.status(200).json({no:'Nothing to see here'})
 }

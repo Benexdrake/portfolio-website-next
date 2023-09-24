@@ -7,6 +7,7 @@ import PokemonSkills from '@/components/pokedex/pokemon/pokemon_skills';
 import Link from 'next/link'
 import Image from 'next/image';
 import PokemonEvolutions from '@/components/pokedex/pokemon/pokemon_evolutions';
+import axios from 'axios';
 
 export default function Pokedex(props:any) {
 
@@ -59,7 +60,7 @@ export default function Pokedex(props:any) {
  export async function getServerSideProps(ctx:any)
  {
     const nr = ctx.params.nr;
-    const pokemons = await fetch('http://localhost:3000/api/pokedex/'+nr).then(x => {return x.json()}) as Pokemon[]
+    const pokemons = await axios.post('http://localhost:3000/api/pokedex/'+nr, {key:process.env.PROTECT_API}).then(x => {return x.data});
     if(!pokemons || pokemons.length === 0)
     return {
       redirect: {

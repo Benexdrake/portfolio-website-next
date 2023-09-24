@@ -5,7 +5,7 @@ import { GithubUser } from "@/models/githubUser";
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) 
 {
-    if(req.method === 'GET')
+    if(req.method === 'POST' && req.body.key === process.env.PROTECT_API)
     {
         const octo = new Octokit({
             auth: process.env.Github_Secret
@@ -33,4 +33,6 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 
         res.status(200).json(user)
     }    
+    else
+        res.status(200).json({no:'Nothing to see here'})
 }

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Fragment } from 'react';
 
 export default function Impressum(props:any) {
@@ -91,7 +92,8 @@ export default function Impressum(props:any) {
  
  export async function getServerSideProps()
  {
-   const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => {return x.json()})
+
+   const aboutMe = await axios.post('http://localhost:3000/api/aboutMe', {key:process.env.PROTECT_API}).then(x => {return x.data});
    
    return {
      props: {

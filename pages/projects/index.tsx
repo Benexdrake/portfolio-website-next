@@ -6,13 +6,13 @@ export default function Projects() {
         <div className="container" style={{marginTop:'80px'}}>
             <div className="row">
                 <div className="col-xl-4 col-lg-6">
-                    <Link href="/github" style={{ textDecoration: 'none' }}><ProjectCard image="github.png" title="Github" description="Github repositories" /></Link>
+                    <ProjectCard route="/github" image="github.png" title="Github" description="Github repositories" />
                 </div>
                 <div className="col-xl-4 col-lg-6">
-                    <Link href="/crunchyroll" style={{ textDecoration: 'none' }}><ProjectCard image="crunchyroll.png" title="Crunchyroll" description="Scraped Animes from Crunchyroll" /></Link>
+                    <ProjectCard route="/crunchyroll" image="crunchyroll.png" title="Crunchyroll" description="Scraped Animes from Crunchyroll" />
                 </div>
                 <div className="col-xl-4 col-lg-6">
-                    <Link href="/pokedex" style={{ textDecoration: 'none' }}><ProjectCard image="pokemon.jpg" title="Pokemon" description="Scraped Pokemon from Pokemon.com" /></Link>
+                    <ProjectCard route="/pokedex" image="pokemon.jpg" title="Pokemon" description="Scraped Pokemon from Pokemon.com" />
                 </div>
             </div>
         </div>

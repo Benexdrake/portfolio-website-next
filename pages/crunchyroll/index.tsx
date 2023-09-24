@@ -18,7 +18,7 @@ export default function Crunchyroll(props: any) {
 
 export async function getServerSideProps(ctx:any) 
 {
-  let animes = await axios.get('http://localhost:3000/api/crunchyroll/').then(x => {return x.data});
+  let animes = await axios.post('http://localhost:3000/api/crunchyroll/', {key:process.env.PROTECT_API}).then(x => {return x.data});
   animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
   return {
     props: {

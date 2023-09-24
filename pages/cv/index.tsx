@@ -2,6 +2,7 @@ import CvImageBlock from '@/components/cv/cv_image_block';
 import CvContactBlock from '@/components/cv/cv_contact_block';
 import CvTableBlock from '@/components/cv/cv_table_row';
 import CvSkillsBlock from '@/components/cv/cv_skills_block';
+import axios from 'axios';
 //import styles from '@/styles/Home.module.css'
 
 //const inter = Inter({ subsets: ['latin'] })
@@ -49,7 +50,7 @@ export default function CV(props: any) {
 }
 
 export async function getServerSideProps() {
-  const aboutMe = await fetch('http://localhost:3000/api/aboutMe').then(x => { return x.json() })
+  const aboutMe = await axios.post('http://localhost:3000/api/aboutMe', {key:process.env.PROTECT_API}).then(x => {return x.data});
 
   return {
     props: {
