@@ -7,8 +7,8 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     {
         const animes = await (await GetDB('Crunchyroll','Animes')).find().toArray();
 
-        let anime = animes.filter(x => x._id.toString() === req.query.id)
-        res.status(200).json(anime[0])
+        let anime = animes.find(x => x._id.toString() === req.query.id)
+        res.status(200).json(anime)
     }    
     else
         res.status(200).json({no:'Nothing to see here'})
