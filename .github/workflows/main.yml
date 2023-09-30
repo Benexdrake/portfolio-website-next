@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 env:
   NODE_VERSION: 20
-  BUILD_FOLDER: '/var/www/portfolio'
   APP_NAME: 'Portfolio'
+  DEPLOY_PATH: '/var/www/portfolio'
   PORT: 22
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
       with:
         name: build-files
         path: |
-          ${{env.BUILD_FOLDER}}
+          .next
           package.json
           package-lock.json
     
@@ -86,9 +86,9 @@ jobs:
       - name: Install Dependencies on Server
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.IP }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{env.PORT}}
           script: |
             cd ${{env.DEPLOY_PATH}}
