@@ -36,7 +36,7 @@ export default function Navbar(props: any) {
                 <div className="collapse navbar-collapse justify-content-center" id="navbarScroll">
                     <ul className="navbar-nav navbar-nav-scroll">
                         <li className="nav-item">
-                            <Link href="/" className="nav-link text-color4">{process.env.TEST}</Link>
+                            <Link href="/" className="nav-link text-color4">{process.env.TESTING}</Link>
                         </li>
                         <li className="nav-item">
                             <Link href="/cv" className="nav-link text-color4">CV</Link>
