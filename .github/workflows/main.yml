@@ -1,0 +1,32 @@
+name: Main
+on:
+  push:
+    branches: [main]
+    paths-ignore: 
+      - .github/**
+
+jobs:
+  test-stage:
+    uses: benexdrake/github_actions/.github/workflows/test.yml@main
+    with:
+      NODE_VERSION: 20
+      
+  build-stage:
+    needs: test-stage
+    uses: benexdrake/github_actions/.github/workflows/build.yml@main
+    with:
+      NODE_VERSION: 20
+      BUILD_FOLDER: '.next'
+      
+  deploy-stage:
+    needs: build-stage
+    uses: benexdrake/github_actions/.github/workflows/deploy.yml@main
+    with:
+      APP_NAME: Test Application
+      SERVER_PORT: 22
+      DEPLOY_PATH: '/var/www/app'
+    secrets:
+      IP: ${{secrets.SERVER_IP}}
+      SSH: ${{secrets.SERVER_SSH_KEY}}
+      USERNAME: ${{secrets.SERVER_USERNAME}}
+      PASSWORD: ${{secrets.SERVER_PASSWORD}}
