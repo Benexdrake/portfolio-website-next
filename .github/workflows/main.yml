@@ -30,7 +30,6 @@ jobs:
         path: ~/.npm
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
 
-
     - name: Install NodeJs
       uses: actions/setup-node@v3
       with:
@@ -38,6 +37,13 @@ jobs:
       
     - name: Install Dependencies
       run: npm ci
+
+    - name: Create .env.local
+      run: |
+        'echo test'
+        'echo test'
+        'echo test'
+        'echo test'
 
     - name: create-json
       id: create-json
