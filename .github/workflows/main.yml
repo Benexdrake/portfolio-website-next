@@ -40,10 +40,10 @@ jobs:
 
     - name: Create .env.local
       run: |
-        'echo test'
-        'echo test'
-        'echo test'
-        'echo test'
+        echo 'TEST'
+        echo 'TEST'
+        echo 'TEST'
+        echo 'TEST'
 
     - name: create-json
       id: create-json
