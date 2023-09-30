@@ -22,9 +22,9 @@ jobs:
     needs: build-stage
     uses: benexdrake/github_actions/.github/workflows/deploy.yml@main
     with:
-      APP_NAME: Test Application
+      APP_NAME: Portfolio
       SERVER_PORT: 22
-      DEPLOY_PATH: '/var/www/app'
+      DEPLOY_PATH: '/var/www/portfolio'
     secrets:
       IP: ${{secrets.SERVER_IP}}
       SSH: ${{secrets.SERVER_SSH_KEY}}

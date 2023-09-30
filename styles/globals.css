@@ -241,7 +241,7 @@ li>a.text-color4:hover {
     padding-bottom: 2px;
 }
 
-li>a.text-color4:active {
+li>a.text-color4:focus {
     color: var(--color3);
 }
 
@@ -296,4 +296,19 @@ li>a.text-color4:active {
     margin: 20px 0;
     padding: 40px;
     border-radius: 10px;
+}
+
+.flex
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.box
+{
+    width: 10rem;
+    height: 15rem;
+    background-color: red;
+    border: 3px solid black;
 }
