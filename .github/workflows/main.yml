@@ -20,6 +20,13 @@ jobs:
       BUILD_FOLDER: '.next'
     secrets:
       ABOUTME: ${{secrets.ABOUTME}}
+      GH_USER: ${{secrets.GH_USER}}
+      GH_SECRET: ${{secrets.GH_SECRET}}
+      MONGO: ${{secrets.MONGO}}
+      NEXTAUTH_URL: ${{secrets.NEXTAUTH_URL}}
+      PROTECT_API: ${{secrets.PROTECT_API}}
+      DISCORD_CLIENT: ${{secrets.DISCORD_CLIENT}}
+      DISCORD_SECRET: ${{secrets.DISCORD_SECRET}}
       
   deploy-stage:
     needs: build-stage
