@@ -14,10 +14,12 @@ jobs:
       
   build-stage:
     needs: test-stage
-    uses: benexdrake/github_actions/.github/workflows/build.yml@main
+    uses: benexdrake/github_actions/.github/workflows/portfolio-build.yml@main
     with:
       NODE_VERSION: 20
       BUILD_FOLDER: '.next'
+    secrets:
+      ABOUTME: ${{secrets.ABOUTME}}
       
   deploy-stage:
     needs: build-stage
