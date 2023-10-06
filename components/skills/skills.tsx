@@ -5,7 +5,7 @@ export default function Skills(props: any) {
     const skills = props.skills;
     const title = props.title;
     return (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-start">
 
         <div className="skills skill-block">
             <div className="skillHeader">

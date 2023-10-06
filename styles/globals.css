@@ -130,10 +130,7 @@
 }
 
 .skill-block {
-    padding: 50px;
-
     border-radius: 10px;
-    background-color: red;
     min-width: 23rem;
     max-width: 23rem;
 }
