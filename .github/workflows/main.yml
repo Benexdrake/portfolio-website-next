@@ -8,7 +8,7 @@ on:
 env:
   NODE_VERSION: 20
   APP_NAME: 'Portfolio'
-  DEPLOY_PATH: '/var/www/portfolio'
+  DEPLOY_PATH: '/var/www/portfoliov2'
   PORT: 22
 
 jobs:
