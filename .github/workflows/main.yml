@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 env:
   NODE_VERSION: 20
-  APP_NAME: 'PortfolioV2'
-  DEPLOY_PATH: '/var/www/portfoliov2'
+  APP_NAME: 'Portfolio'
+  DEPLOY_PATH: '/var/www/portfolio'
   PORT: 22
 
 jobs:
