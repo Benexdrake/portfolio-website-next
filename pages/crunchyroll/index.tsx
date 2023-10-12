@@ -1,28 +1,68 @@
-import CrunchyrollCard from "@/components/crunchyroll/crunchyroll_card";
+import CrunchyrollCards from "@/components/crunchyroll/crunchyroll_cards";
 import { Anime } from "@/models/anime";
+
 import axios from "axios";
+import { Fragment, useState } from 'react'
 
 export default function Crunchyroll(props: any) {
-  const animes = props.animes;
+  //let animes = props.animes as Anime[];
+
+  const [animes, setAnimes] = useState(props.animes)
+
+  let animeHandler = async (e: { target: { value: string; }; }) => {
+    console.log('HALLO WELT')
+    let a = await getAnimesByTitle(e.target.value);
+    setAnimes(a);
+  }
+
   return (
-    <div className="container" style={{marginTop: '100px'}}>
+    <Fragment>
       <div className="row">
-        {animes.map((x:Anime) => {
-          return (
-            <CrunchyrollCard anime={x}/>
-            )})}
+        <div className="col-xl-2 block">
+          <div>
+            <p>SEARCHBAR</p>
+            <div className="form-outline">
+              <input type="search" id="form1" className="form-control" placeholder="Anime Title" aria-label="Search" onChange={animeHandler}/>
+            </div>
+          </div>
+          <div>
+            <p>GENRES</p>
+          </div>
+          <div>
+            <p>RATING</p>
+          </div>
         </div>
-    </div>
+        <div className="col-xl-10">
+            <CrunchyrollCards animes={animes}/>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center">
+        PAGINATOR
+      </div>
+    </Fragment>
   )
 }
 
-export async function getServerSideProps(ctx:any) 
+export async function getServerSideProps(ctx: any) 
 {
-  let animes = await axios.post('http://localhost:3000/api/crunchyroll/', {key:process.env.PROTECT_API}).then(x => {return x.data});
+  let title = '';
+
+  if(ctx.query.title)
+    title = ctx.query.title;
+
+  
+  let animes = await axios.post('http://localhost:3000/api/crunchyroll/').then(x => { return x.data });
   animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
   return {
     props: {
       animes
     }
   };
+}
+
+async function getAnimesByTitle(title:string)
+{
+  let animes = await axios.post('http://localhost:3000/api/crunchyroll/', { title:title}).then(x => { return x.data });
+  animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
+  return animes;
 }

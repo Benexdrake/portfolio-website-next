@@ -249,33 +249,12 @@ h3.text-color3 {
 
 /* Project Cards*/
 
-.card {
+.card-crunchyroll {
+    width: 10rem;
+    height: 15rem;
+    background-color: red;
+    border: 3px solid black;
     text-decoration: none;
-}
-
-.card:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03);
-    border-color: var(--color3);
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px var(--color3);
-}
-
-
-.card-crunchyroll-top {
-    background-color: var(--color1);
-    opacity: 0.8;
-    padding: 10px 10px 0 10px;
-    border-radius: 3%;
-}
-
-.card-crunchyroll-bottom {
-    background-color: var(--color1);
-    opacity: 0.8;
-    padding: 5px 10px;
-    border-radius: 3%;
-}
-
-.card:hover a .hidden {
-    display: none;
 }
 
 .card-crunchyroll-tag-button {
@@ -287,19 +266,12 @@ h3.text-color3 {
     border-radius: 3%;
 }
 
-
-.flex
+.card-crunchyroll-flex
 {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.box
-{
-    width: 10rem;
-    height: 15rem;
-    background-color: red;
-    border: 3px solid black;
-}
+
 
