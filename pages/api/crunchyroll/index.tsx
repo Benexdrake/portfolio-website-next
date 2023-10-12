@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) 
 {
-    if(req.method === 'POST')
+    if(req.method === 'GET')
     {
         const animes = await (await GetDB('Crunchyroll', 'Animes')).find().toArray() as unknown as Anime[];
         if(!req.body.title)

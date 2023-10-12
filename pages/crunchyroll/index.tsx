@@ -5,7 +5,6 @@ import axios from "axios";
 import { Fragment, useState } from 'react'
 
 export default function Crunchyroll(props: any) {
-  //let animes = props.animes as Anime[];
 
   const [animes, setAnimes] = useState(props.animes)
 
@@ -48,9 +47,8 @@ export async function getServerSideProps(ctx: any)
 
   if(ctx.query.title)
     title = ctx.query.title;
-
   
-  let animes = await axios.post('https://benrichter.me/api/crunchyroll/').then(x => { return x.data });
+  let animes = await axios.get(`${process.env.NEXTAUTH_URL}/api/crunchyroll/`).then(x => { return x.data });
   animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
   return {
     props: {
@@ -61,7 +59,8 @@ export async function getServerSideProps(ctx: any)
 
 async function getAnimesByTitle(title:string)
 {
-  let animes = await axios.post('https://benrichter/api/crunchyroll/', { title:title}).then(x => { return x.data });
+  const url = window.location.origin
+  let animes = await axios.get(`${url}/api/crunchyroll/?title=${title}`).then(x => { return x.data });
   animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
   return animes;
 }
