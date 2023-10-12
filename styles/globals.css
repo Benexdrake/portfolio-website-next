@@ -47,6 +47,22 @@
     border-color: var(--color3);
 }
 
+.block {
+    margin: 10px 0px 20px 0;
+    border-radius: 10px;
+    background-color: var(--color1);
+}
+
+.impressum-block
+{
+    margin: 20px 0;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: var(--color1);
+}
+
+/* div Tables */
+
 .css-table {
     display: table;
 }
@@ -80,6 +96,44 @@
     width: 300px;
 }
 
+/* Profile Image */
+
+.aboutMe-Image {
+    border: 5px solid var(--color3);
+    border-radius: 100%;
+}
+
+/* Navbar */
+
+.nav-header {
+    background-color: var(--color1);
+    border-bottom: 5px solid var(--color3);
+}
+
+.nav-button {
+    color:  var(--color4);
+}
+
+.nav-button:hover {
+    border-bottom: 2px solid var(--color3);
+    color: var(--color4);
+    padding-bottom: 2px;
+}
+
+.nav-button:focus {
+    color: var(--color3);
+    border-bottom: 2px solid var(--color3);
+    padding-bottom: 2px;
+}
+
+.cv-button {
+    background-color: var(--color3);
+    color: var(--color4);
+    border: 2px solid var(--color4);
+}
+
+/* CV */
+
 .cv-left {
     padding: 40px;
     width: 400px;
@@ -96,22 +150,28 @@
     color: var(--color1);
 }
 
-.cv-button {
-    background-color: var(--color3);
-    color: var(--color4);
-    border: 2px solid var(--color4);
-}
-
 .cv-button:hover {
     background-color: var(--color2);
     color: var(--color3);
     border: 2px solid var(--color3);
 }
 
-.nav-header {
+.link {
+    padding: 0;
+    text-decoration: none;
+    color: var(--color4);
     background-color: var(--color1);
-    border-bottom: 5px solid var(--color3);
 }
+
+.link:hover {
+    color: var(--color3);
+}
+
+div>i.icon {
+    font-size: 1rem;
+}
+
+/* Projects */
 
 .projects {
     background-color: var(--color1);
@@ -122,34 +182,12 @@
     background-color: var(--color3);
 }
 
-.block {
-    margin: 10px 0px 20px 0;
-
-    border-radius: 10px;
-    background-color: var(--color1);
-}
+/* Skills */
 
 .skill-block {
     border-radius: 10px;
     min-width: 23rem;
     max-width: 23rem;
-}
-
-.aboutMe-Image {
-    border: 5px solid var(--color3);
-    border-radius: 100%;
-}
-
-.icon {
-    display: inline;
-    font-size: 2rem;
-    margin: 3px;
-    color: var(--color3);
-    background-color: var(--color1);
-}
-
-.icon:hover {
-    color: var(--color4);
 }
 
 .skillHeader {
@@ -174,11 +212,21 @@
     transform: translate3D(0, -1px, 0) scale(2.00);
 }
 
-.discord-image {
-    width: 22%;
-    height: 22%;
-    margin-left: 10px;
+/* Icons */
+
+.icon {
+    display: inline;
+    font-size: 2rem;
+    margin: 3px;
+    color: var(--color3);
+    background-color: var(--color1);
 }
+
+.icon:hover {
+    color: var(--color4);
+}
+
+/* Stars */
 
 .stars {
     font-size: 1.5rem;
@@ -199,19 +247,10 @@ h3.text-color3 {
     font-weight: bold;
 }
 
-.link {
-    padding: 0;
+/* Project Cards*/
+
+.card {
     text-decoration: none;
-    color: var(--color4);
-    background-color: var(--color1);
-}
-
-.link:hover {
-    color: var(--color3);
-}
-
-div>i.icon {
-    font-size: 1rem;
 }
 
 .card:hover {
@@ -220,41 +259,15 @@ div>i.icon {
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px var(--color3);
 }
 
-.skill-block:hover,
-.block:hover {
-    transform: translate3D(0, -1px, 0) scale(1.03);
-    border-color: var(--color3);
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px var(--color3);
-}
 
-.form-control:focus {
-    border-color: var(--color3);
-    box-shadow: inset 0 1px 5px rgb(255, 255, 255), 0 0 8px var(--color3);
-}
-
-li>a.text-color4:hover {
-    color: var(--color4);
-    border-bottom: 2px solid var(--color3);
-    padding-bottom: 2px;
-}
-
-li>a.text-color4:focus {
-    color: var(--color3);
-}
-
-.card {
-    border: 3px solid var(--color3);
-    text-decoration: none;
-}
-
-.overlay-card-top-color1 {
+.card-crunchyroll-top {
     background-color: var(--color1);
     opacity: 0.8;
     padding: 10px 10px 0 10px;
     border-radius: 3%;
 }
 
-.overlay-card-bottom-color1 {
+.card-crunchyroll-bottom {
     background-color: var(--color1);
     opacity: 0.8;
     padding: 5px 10px;
@@ -265,7 +278,7 @@ li>a.text-color4:focus {
     display: none;
 }
 
-.tag-button {
+.card-crunchyroll-tag-button {
     background-color: var(--color3);
     color: var(--color4);
     margin: 0 10px 0 0;
@@ -274,26 +287,6 @@ li>a.text-color4:focus {
     border-radius: 3%;
 }
 
-.skill-icon {
-    width: 50px;
-    background: transparent;
-}
-
-.skill-icon:hover {
-    transform: translate3D(0, -1px, 0) scale(2.00);
-}
-
-.skill-title {
-    background-color: var(--color1);
-    color: var(--color4);
-}
-
-.impressum-block
-{
-    margin: 20px 0;
-    padding: 40px;
-    border-radius: 10px;
-}
 
 .flex
 {
@@ -310,10 +303,3 @@ li>a.text-color4:focus {
     border: 3px solid black;
 }
 
-.footer
-{
-    background-color: var(--color1);
-    padding: 5px;
-    border: 1px solid var(--color3);
-    text-align: center;
-}

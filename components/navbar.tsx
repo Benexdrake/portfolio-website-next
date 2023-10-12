@@ -10,7 +10,7 @@ export default function Navbar(props: any) {
         <nav className="navbar navbar-expand-lg fixed-top nav-header" >
             <div className="container-fluid">
 
-                {!session &&
+                {/* {!session &&
                     <>
                         <button className='btn btn-primary' onClick={() => signIn('discord')}>
                             <i className="fa-brands fa-discord"></i> Sign in
@@ -23,7 +23,7 @@ export default function Navbar(props: any) {
                         <button className='btn btn-danger' onClick={() => signOut()}><i className="fa-brands fa-discord"></i> Sign out</button>
                         <DiscordUserInformation user={session.user}/>
                     </>
-                }
+                } */}
                 <button className="navbar-toggler navbar-dark burger-button"
                     type="button"
                     data-bs-toggle="collapse"
@@ -36,22 +36,22 @@ export default function Navbar(props: any) {
                 <div className="collapse navbar-collapse justify-content-center" id="navbarScroll">
                     <ul className="navbar-nav navbar-nav-scroll">
                         <li className="nav-item">
-                            <Link href="/" className="nav-link text-color4">HOME</Link>
+                            <Link href="/" className="nav-link nav-button">HOME</Link>
                         </li>
                         <li className="nav-item">
-                            <Link href="/cv" className="nav-link text-color4">CV</Link>
+                            <Link href="/cv" className="nav-link nav-button">CV</Link>
                         </li>
                         <li className="nav-item">
-                            <Link href="/projects" className="nav-link text-color4">Projects</Link>
+                            <Link href="/projects" className="nav-link nav-button">PROJECTS</Link>
                         </li>
                         {session &&
                             (
                                 <li className="nav-item">
-                                    <Link href="/profile" className="nav-link text-color4">Profile</Link>
+                                    <Link href="/profile" className="nav-link nav-button">PROFILE</Link>
                                 </li>
                             )}
                         <li className="nav-item">
-                            <Link href="/impressum" className="nav-link text-color4">Impressum</Link>
+                            <Link href="/impressum" className="nav-link nav-button">IMPRESSUM</Link>
                         </li>
                         <li className="nav-item">
                         </li>

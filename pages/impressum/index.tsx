@@ -8,7 +8,7 @@ export default function Impressum(props:any) {
     <div className="container">
     <div className="row  d-flex justify-content-center">
         <div className="col-md-12 col-lg-12 text-color3">
-            <div className="bg-color1 impressum-block">
+            <div className="impressum-block">
 
                 <h1 className="text-color3"><strong>Impressum:</strong></h1>
                 <hr/>

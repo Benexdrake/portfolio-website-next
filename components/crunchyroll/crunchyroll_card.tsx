@@ -13,14 +13,14 @@ export default function CrunchyrollCard(props: any) {
                     <Image src={anime.imageUrl} className="card-img" alt="..." width={200} height={600} loading='lazy' />
 
                     <div className="card-img-overlay hidden" style={{ padding: '0px' }}>
-                        <div className="d-flex justify-content-center overlay-card-top-color1">
+                        <div className="d-flex justify-content-center card-crunchyroll-top">
                             <div>
                                 <h5 className="card-title text-color4">{anime.title}</h5>
                             </div>
                         </div>
 
                         <div className="card-img-overlay h-100 d-flex flex-column justify-content-end hidden" style={{ padding: '0px' }}>
-                            <div className="overlay-card-bottom-color1">
+                            <div className="card-crunchyroll-bottom">
 
                                 <div className="d-flex justify-content-between">
                                     <div>
@@ -39,7 +39,7 @@ export default function CrunchyrollCard(props: any) {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-start">
-                                    {anime.tags.slice(0, 3).map(tag => { return <div key={anime._id + tag} className="tag-button">{tag}</div> })}
+                                    {anime.tags.slice(0, 3).map(tag => { return <div key={anime._id + tag} className="card-crunchyroll-tag-button">{tag}</div> })}
                                 </div>
                             </div>
                         </div>

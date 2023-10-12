@@ -5,7 +5,7 @@ export default function AboutMeBlock(props:any)
 {   
     const aboutMe = props.aboutMe;
     return (
-        <div className="bg-color1 block">
+        <div className="block">
 
             <div className="row p-3">
               <div className="col-md-3">
