@@ -7,13 +7,14 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     if(req.method === 'GET')
     {
         const animes = await (await GetDB('Crunchyroll', 'Animes')).find().toArray() as unknown as Anime[];
-        if(!req.body.title)
+        if(!req.query.title)
         {   
             res.status(200).json(animes)
         }
         else
         {
-            const a = animes.filter((a:Anime) => a.title.toLocaleLowerCase().includes(req.body.title.toLocaleLowerCase()))
+            const title = req.query.title as string;
+            const a = animes.filter((a:Anime) => a.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()))
             res.status(200).json(a)
         }
     }    
