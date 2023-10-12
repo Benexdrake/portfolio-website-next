@@ -10,7 +10,6 @@ export default function Crunchyroll(props: any) {
   const [animes, setAnimes] = useState(props.animes)
 
   let animeHandler = async (e: { target: { value: string; }; }) => {
-    console.log('HALLO WELT')
     let a = await getAnimesByTitle(e.target.value);
     setAnimes(a);
   }
@@ -62,7 +61,7 @@ export async function getServerSideProps(ctx: any)
 
 async function getAnimesByTitle(title:string)
 {
-  let animes = await axios.post('http://localhost:3000/api/crunchyroll/', { title:title}).then(x => { return x.data });
+  let animes = await axios.post('https://benrichter/api/crunchyroll/', { title:title}).then(x => { return x.data });
   animes = animes.sort(() => 0.5 - Math.random()) as Anime[];
   return animes;
 }
