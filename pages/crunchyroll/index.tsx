@@ -25,6 +25,7 @@ export default function Crunchyroll(props: any) {
           </div>
           <div>
             <p>GENRES</p>
+            
           </div>
           <div>
             <p>RATING</p>
