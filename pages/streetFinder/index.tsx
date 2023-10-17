@@ -35,7 +35,6 @@ export default function StreetFinder() {
                                     <div>Stadt:</div>
                                     <div>{x.townName}</div>
                                 </div>
-                                
                             </div>
                         )
                     })}
