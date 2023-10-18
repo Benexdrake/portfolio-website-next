@@ -14,9 +14,6 @@ export default function Projects() {
                 <div className="col-xl-4 col-lg-6">
                     <ProjectCard route="/pokedex" image="pokemon.jpg" title="Pokemon" description="Scraped Pokemon from Pokemon.com" />
                 </div>
-                <div className="col-xl-4 col-lg-6">
-                    <ProjectCard route="/streetFinder" image="duesseldorf.jpg" title="StreetFinder" description="Here u can find Streets in Duesseldorf" />
-                </div>
             </div>
         </div>
     );
