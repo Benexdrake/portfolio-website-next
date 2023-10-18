@@ -7,7 +7,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
     {
         let streetName = req.query.streetName as string;
 
-        let s = streets.filter(x => x.streetName.toLocaleLowerCase().includes(streetName.toLocaleLowerCase()));
+        let s = streets.filter(x => x.street.toLocaleLowerCase().includes(streetName.toLocaleLowerCase()));
 
         res.status(200).json(s)
     }

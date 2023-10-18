@@ -21,7 +21,7 @@ export default function StreetFinder() {
                             <div className="block" style={{ padding: '1rem', margin: '0', minWidth:'15rem' }}>
                                 <div className="css-table-row">
                                     <div>Straße:</div>
-                                    <div>{x.streetName}</div>
+                                    <div>{x.street}</div>
                                 </div>
                                 <div className="css-table-row">
                                     <div>PLZ:</div>
@@ -33,7 +33,7 @@ export default function StreetFinder() {
                                 </div>
                                 <div className="css-table-row">
                                     <div>Stadt:</div>
-                                    <div>{x.townName}</div>
+                                    <div>{x.location}</div>
                                 </div>
                             </div>
                         )
@@ -44,8 +44,8 @@ export default function StreetFinder() {
     )
 }
 
-async function getStreets(streetName: string) {
+async function getStreets(street: string) {
     const url = window.location.origin
-    let streets = await axios.get(`${url}/api/streets/name?streetName=${streetName}`).then(x => { return x.data })
+    let streets = await axios.get(`${url}/api/streets/name?streetName=${street}`).then(x => { return x.data })
     return streets;
 }
