@@ -19,7 +19,7 @@ export default function Pokedex(props: any) {
       <div className='container text-color4' style={{ backgroundColor: getColor(pokemons[0].types[0].toLowerCase()), boxShadow: '0px 0px 60px 30px black', borderRadius: '20px', padding: '20px', marginTop: '150px' }}>
         <div className='row'>
           <div className='col-lg-4'>
-            <img src={pokemons[0].imageUrl} alt="" className='pokemon-shadow' />
+            <img src={pokemons[0].imageUrl} alt="" width={400} height={400} className='pokemon-shadow' />
             <div className='bg-color4' style={{ padding: '10px', borderRadius: '10px' }}>
               <PokemonTypesWeakness title="Types" attributes={pokemons[0].types} id={pokemons[0]._id} />
               <PokemonTypesWeakness title="Weaknesses" attributes={pokemons[0].weaknesses} id={pokemons[0]._id} />

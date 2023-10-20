@@ -12,7 +12,7 @@ export default function PokemonEvolutions(props:any)
         <h3>Evolutions:</h3>
             {images.map((x:string) => {
                 return (
-                    <Image key={id + x} src={x} width={100} height={100} className='bg-color2' style={{ margin: '5px', borderRadius: '30px', padding: '5px' }} alt=""/>
+                    <img key={id + x} src={x} width={100} height={100} className='bg-color2' style={{ margin: '5px', borderRadius: '30px', padding: '5px' }} alt=""/>
                     ) 
                 })}
         </Fragment>
