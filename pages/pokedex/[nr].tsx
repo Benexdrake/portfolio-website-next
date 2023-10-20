@@ -32,10 +32,10 @@ export default function Pokedex(props: any) {
                 <div className='col-8'>
                   <h3>#{pokemons[0].nr}</h3>
                 </div>
-                <div className='col-3 d-flex justify-content-end' style={{marginLeft:'50px'}}>
+                <div className='col-3 d-flex justify-content-end' style={{ marginLeft: '50px' }}>
                   <h3>{getGender(pokemons[0].genders)}</h3>
                 </div>
-                  <h1>{pokemons[0].name}</h1>
+                <h1>{pokemons[0].name}</h1>
                 <p>{pokemons[0].descriptions}</p>
               </div>
             </div>
