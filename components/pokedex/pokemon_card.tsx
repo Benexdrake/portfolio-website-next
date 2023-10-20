@@ -1,6 +1,7 @@
 import { getColor, getGender } from "@/lib/helper";
 import PokemonTypesWeakness from "./pokemon_types_weakness";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PokemonCard(props:any)
 {
@@ -10,7 +11,7 @@ export default function PokemonCard(props:any)
         <Link href={`/pokedex/${pokemon.nr}`}>
         <div className="card bg-dark text-white" style={{padding: '100px 0'}}>
     <div style={{backgroundImage: `url(../../../../assets/pokemon_elements/${pokemon.types[0].toLowerCase()}.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
-        <img src={pokemon.imageUrl} className="card-img" alt="pokemon {{pokemon.name}}"/>
+        <Image src={pokemon.imageUrl} className="card-img" alt="pokemon {{pokemon.name}}" width={200} height={400}/>
         <div className="card-img-overlay">
             <div style={{padding: '10px'}} className="d-flex justify-content-between bg-color4">
                 <div>

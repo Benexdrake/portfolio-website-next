@@ -342,5 +342,7 @@ h3.text-color3 {
     gap: 0.5rem;
 }
 
-
+.pokemon-shadow {
+    filter: drop-shadow(10px 10px 10px #000)
+}
 
