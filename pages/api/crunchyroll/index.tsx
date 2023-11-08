@@ -1,4 +1,4 @@
-import { GetDB } from "@/lib/mongodb";
+import { GetDBAnime } from "@/lib/mongodb";
 import { Anime } from "@/models/anime";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -11,7 +11,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
         let rating = 5;
         let tag = ''
 
-        const animes = await (await GetDB('Crunchyroll', 'Animes')).find().toArray() as unknown as Anime[];
+        const animes = await (await GetDBAnime('Crunchyroll', 'Animes')).find().toArray() as unknown as Anime[];
         if(!req.query.title)
         {   
             res.status(200).json(animes)
