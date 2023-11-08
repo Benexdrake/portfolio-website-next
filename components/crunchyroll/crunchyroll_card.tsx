@@ -8,7 +8,7 @@ export default function CrunchyrollCard(props: any) {
         <Link href={anime.url} target="_blank">
             <div className="card-crunchyroll">
                 <div className="card-crunchyroll-inner">
-                    <div className="card-crunchyroll-front" style={{ backgroundImage: `url("${anime.imageUrl.replace('480x720', '240x360')}")`, backgroundSize: 'cover' }}>
+                    <div className="card-crunchyroll-front" style={{ backgroundImage: `url("${anime.imageUrl_card.replace('480x720', '240x360')}")`, backgroundSize: 'cover' }}>
                         
                     </div>
                     <div className="card-crunchyroll-back text-color4" style={{backgroundImage: '../../../../assets/crunchyroll_back.png'}}> 
