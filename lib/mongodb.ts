@@ -34,8 +34,6 @@ export async function CreateOrUpdateAnime(db:string, collection:string, anime:An
 {
     let ANIMES = await GetDBAnime(db,collection);
 
-    let id = anime._id as string
-
     let dbAnime = await ANIMES.find({'_id': anime._id}).toArray();
 
     if(dbAnime.length > 0)
