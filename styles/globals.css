@@ -346,3 +346,10 @@ h3.text-color3 {
     filter: drop-shadow(10px 10px 10px #000)
 }
 
+.footer {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--color1);
+    border: 2px solid var(--color3);
+}
